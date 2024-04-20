@@ -38,6 +38,10 @@
         <span class="material-icons">settings</span>
         <span class="text">Settings</span>
       </router-link>
+      <router-link class="button" to="/login">
+        <span class="material-icons">login</span>
+        <span class="text">Login</span>
+      </router-link>
     </div>
   </aside>
 </template>

@@ -28,6 +28,10 @@ const router = createRouter({
       path: "/dislocations",
       component: () => import("../views/Dislocations.vue"),
     },
+    {
+      path: "/login",
+      component: () => import("../views/Login.vue"),
+    },
   ],
 });
 
