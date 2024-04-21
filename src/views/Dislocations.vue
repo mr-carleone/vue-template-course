@@ -1,49 +1,35 @@
 <template>
   <main class="dislocations-page">
     <div class="container table-responsive">
-      <Table :fields="fields" :student-data="studentData" />
+      <Table :fields="fields" :carriage-data="carriageData" />
     </div>
   </main>
 </template>
 <script setup>
 import Table from "../components/Table.vue";
-const studentData = [
+const carriageData = [
   {
     ID: "01",
-    Name: "Abiola Esther",
-    Course: "Computer Science",
-    Gender: "Female",
-    Age: "22",
+    Number: "ЭШ345678",
+    Carriage: "3456789",
+    Date: "2024-04-21T12:34:00",
+    Branch: "Азов Цемент",
   },
   {
     ID: "02",
-    Name: "Robert V. Kratz",
-    Course: "Philosophy",
-    Gender: "Male",
-    Age: "20",
+    Number: "ЭШ345679",
+    Carriage: "34567893",
+    Date: "2024-04-22T12:34:00",
+    Branch: "Кавказ Цемент",
   },
   {
     ID: "03",
-    Name: "Kristen Anderson",
-    Course: "Economics",
-    Gender: "Female",
-    Age: "21",
-  },
-  {
-    ID: "04",
-    Name: "Adam Simon",
-    Course: "Food science",
-    Gender: "Male",
-    Age: "17",
-  },
-  {
-    ID: "05",
-    Name: "Daisy Katherine",
-    Course: "Business studies",
-    Gender: "Female",
-    Age: "19",
+    Number: "ЭШ345680",
+    Carriage: "34567894",
+    Date: "2024-04-23T12:34:00",
+    Branch: "Волга Цемент",
   },
 ];
-const fields = ["ID", "Name", "Course", "Gender", "Age"];
+const fields = ["ID", "Number", "Carriage", "Date", "Branch"];
 </script>
 <style lang="scss" scoped></style>

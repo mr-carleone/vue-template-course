@@ -7,27 +7,28 @@ const props = defineProps({
   fields: {
     type: Array,
   },
-  studentData: {
+  carriageData: {
     type: Array,
   },
 });
 
 const sort = ref(true);
 const searchQuery = ref("");
-const updatedList = ref(props.studentData);
+const updatedList = ref(props.carriageData);
 const sortTable = (col) => {
   sort.value = !sort.value;
   if (!sort.value) {
-    updatedList.value = sortBy(props.studentData, col);
+    updatedList.value = sortBy(props.carriageData, col);
   } else {
-    updatedList.value = props.studentData;
+    updatedList.value = props.carriageData;
   }
 };
 
 const filteredList = computed(() => {
-  return updatedList.value.filter((student) => {
+  return updatedList.value.filter((railway) => {
     return (
-      student.Name.toLowerCase().indexOf(searchQuery.value.toLowerCase()) != -1
+      railway.Number.toLowerCase().indexOf(searchQuery.value.toLowerCase()) !=
+      -1
     );
   });
 });
@@ -40,15 +41,15 @@ const filteredList = computed(() => {
         type="search"
         class="form-control"
         v-model="searchQuery"
-        placeholder="Student's Name"
-        aria-label="Recipient's username"
+        placeholder="Railway's Number"
+        aria-label="Recipient's number"
         aria-describedby="button-addon2"
       />
     </div>
   </div>
   <table class="table caption-top">
     <caption>
-      <h1 class="text-center">List of Users</h1>
+      <h1 class="text-center">List of Carriage</h1>
     </caption>
     <thead>
       <tr>
@@ -64,12 +65,12 @@ const filteredList = computed(() => {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="student of filteredList" :key="student.ID">
-        <th scope="row">{{ student.ID }}</th>
-        <td>{{ student.Name }}</td>
-        <td>{{ student.Course }}</td>
-        <td>{{ student.Gender }}</td>
-        <td>{{ student.Age }}</td>
+      <tr v-for="railway of filteredList" :key="railway.ID">
+        <th scope="row">{{ railway.ID }}</th>
+        <td>{{ railway.Number }}</td>
+        <td>{{ railway.Carriage }}</td>
+        <td>{{ railway.Date }}</td>
+        <td>{{ railway.Branch }}</td>
       </tr>
     </tbody>
   </table>
